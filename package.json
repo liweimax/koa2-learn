@@ -1,0 +1,26 @@
+{
+  "name": "koa2-learn",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liweimax/koa2-learn.git"
+  },
+  "keywords": [
+    "koa2",
+    "mysql"
+  ],
+  "author": "liwei",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/liweimax/koa2-learn/issues"
+  },
+  "homepage": "https://github.com/liweimax/koa2-learn#readme",
+  "dependencies": {
+    "koa": "^2.5.0"
+  }
+}
