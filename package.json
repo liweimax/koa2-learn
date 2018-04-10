@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/liweimax/koa2-learn#readme",
   "dependencies": {
-    "koa": "^2.5.0"
+    "koa": "^2.5.0",
+    "koa-router": "^7.4.0"
   }
 }
