@@ -4,8 +4,8 @@ const { asyncQuery } = require('../db/asyncDB')
 let userAPIs = new Router()
 
 userAPIs.get('/404', async ( ctx )=>{
-    
-    ctx.body = ctx.request.header.cookie;
+        
+    ctx.body = ctx.cookies.get("SESSION_ID") || "null";
 
 }).get('/all', async ( ctx )=>{
  
@@ -36,6 +36,10 @@ userAPIs.get('/404', async ( ctx )=>{
    
   ctx.body = {status:'failed'};
 })
-
+.get('/logout', async ( ctx )=>{
+ 
+  ctx.session = {}   
+  ctx.body = {status:'successful'};
+})
 
 module.exports = { userAPIs }
