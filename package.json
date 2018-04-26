@@ -22,7 +22,9 @@
   "homepage": "https://github.com/liweimax/koa2-learn#readme",
   "dependencies": {
     "koa": "^2.5.0",
+    "koa-mysql-session": "0.0.2",
     "koa-router": "^7.4.0",
+    "koa-session-minimal": "^3.0.4",
     "mysql": "^2.15.0"
   }
 }

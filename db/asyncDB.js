@@ -1,12 +1,7 @@
 const mysql = require('mysql')
+const dbConfig = require('../dbConfig')
 
-var pool = mysql.createPool({
-  host:'127.0.0.1',
-  user: 'root',
-  password:'liweima',
-  database: 'liweidb'
-});
-
+var pool = mysql.createPool(dbConfig);
 
 let asyncQuery = function( sql, values ) {
   return new Promise(( resolve, reject ) => {

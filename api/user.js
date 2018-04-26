@@ -4,22 +4,9 @@ const { asyncQuery } = require('../db/asyncDB')
 let userAPIs = new Router()
 
 userAPIs.get('/404', async ( ctx )=>{
-    let url = ctx.url
-   
-    let request = ctx.request
-    let req_query = request.query
-    let req_querystring = request.querystring
-
-    let ctx_query = ctx.query
-    let ctx_querystring = ctx.querystring
     
-    ctx.body = {
-      url,
-      req_query,
-      req_querystring,
-      ctx_query,
-      ctx_querystring
-    }
+    ctx.body = ctx.request.header.cookie;
+
 }).get('/all', async ( ctx )=>{
  
   let dataList = await asyncQuery( 'SELECT * FROM user' )
@@ -32,9 +19,16 @@ userAPIs.get('/404', async ( ctx )=>{
   let password = ctx.request.query.password;
 
   let dataList = await asyncQuery( `SELECT * FROM user where name="${name}"`)
+
   for(var ii=0; ii<dataList.length; ++ii){
     let info = dataList[ii];
     if(info.password == password){
+
+      ctx.session = {
+        user_id: Math.random().toString(36).substr(2),
+        count: 0
+      }
+
       ctx.body = {status:'successful'};
       return;
     }      
